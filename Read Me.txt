@@ -14,7 +14,7 @@ Installation guidelines
    a. npm install --save-dev @babel/core @babel/cli @babel/node @babel/preset-env
 
 6. Install nodemand body parser
-   a. npm install nodeman body-parser
+   a. npm install nodemon body-parser
 
 7. Create configuration file for Babel at the root directory called
    .babelrc
@@ -24,5 +24,26 @@ Installation guidelines
           "@babel/preset-env"
       ]
    }
+
+8. We need to modify our package.json file to use nodeman to startup our server automatically
+   a. Replace line 7 with the below code:
+   "start": "nodemon ./index.js --exec babel-node"
+   
+   b. in the root directory create index.js file and add the bellow code:
+      import express from "express";
+
+      const app = express();
+      const PORT = 3000;
+
+      app.get('/', (req, res) =>
+         res.send(`Node and Express server is running on port ${PORT}`)
+      );
+
+      app.listen(PORT, () =>
+        console.log(`Your server is running on port number ${PORT}`)
+      );
+
+    c. Open the terminal window and run the below command:
+       npm start
 
 We are good to go.
