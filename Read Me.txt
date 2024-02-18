@@ -1,0 +1,28 @@
+Installation guidelines
+===================================================
+1. Install Postman
+
+2. Download and install the latest node.js
+
+3. Create your project folder, open the folder location in command promt and run the below instruction.
+   a. npm init (and answer all the questions)
+   b. npm install express (this will install the latest version of express)
+
+4. Download and install the latest MongoDB
+
+5. Basic Babel Setup: Run the below commands
+   a. npm install --save-dev @babel/core @babel/cli @babel/node @babel/preset-env
+
+6. Install nodemand body parser
+   a. npm install nodeman body-parser
+
+7. Create configuration file for Babel at the root directory called
+   .babelrc
+   Create an object in this file like below:
+   {
+      "presets":[
+          "@babel/preset-env"
+      ]
+   }
+
+We are good to go.
