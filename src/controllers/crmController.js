@@ -12,4 +12,14 @@ export const addNewContact = async (req, res) => {
     catch(err){
         res.send(err)
     }
-}
+};
+
+export const getContacts = async (req, res) => {
+    try{
+        let contacts = await Contact.find()
+        res.json(contacts)
+    }
+    catch(err){
+        res.send(err)
+    }
+};
