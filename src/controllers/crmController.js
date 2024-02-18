@@ -23,3 +23,23 @@ export const getContacts = async (req, res) => {
         res.send(err)
     }
 };
+
+export const getContactById = async (req, res) =>{
+    try{
+        let contact = await Contact.findById(req.params.contactId)
+        res.json(contact)
+    }
+    catch(err){
+        res.send(err)
+    }
+};
+
+export const updateContact = async (req, res) => {
+    try{
+        let contact = await Contact.findOneAndUpdate({_id: req.params.contactId}, req.body, {new:true})
+        res.json(contact)
+    }
+    catch(err){
+        res.send(err)
+    }
+};
