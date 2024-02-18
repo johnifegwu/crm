@@ -14,6 +14,9 @@ mongoose.connect('mongodb://localhost/CRMdb');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+//for serving static files
+app.use(express.static('./oublic'));
+
 routes(app);
 
 app.get('/', (req, res) =>
